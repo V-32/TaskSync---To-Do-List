@@ -1,0 +1,446 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E VARIÁVEIS (Paleta de Cores)
+   ========================================================================== */
+:root {
+    --primary-color: #2b5cb3;       /* Azul Corporativo Principal */
+    --primary-hover: #1e4385;       /* Azul Mais Escuro para Hovers */
+    --secondary-color: #6c757d;     /* Cinza para Ações Secundárias */
+    --secondary-hover: #5a6268;
+    --bg-body: #f4f6f9;             /* Fundo do site levemente cinza */
+    --bg-card: #ffffff;             /* Fundo dos cards e formulários */
+    --text-main: #333333;           /* Cor do texto principal */
+    --text-muted: #666666;          /* Cor de textos secundários */
+    --border-color: #e0e4ec;        /* Cor das bordas discretas */
+    
+    /* Cores dos Status/Colunas */
+    --todo-color: #495057;          /* Cinza escuro para A Fazer */
+    --doing-color: #fd7e14;         /* Laranja para Fazendo */
+    --done-color: #28a745;          /* Verde para Concluído */
+
+    /* Cores das Prioridades */
+    --priority-low: #17a2b8;         /* Azul claro / Info */
+    --priority-medium: #ffc107;      /* Amarelo / Atenção */
+    --priority-high: #dc3545;        /* Vermelho / Urgente */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-box: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO E NAVEGAÇÃO (Comum)
+   ========================================================================== */
+.main-header {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: -0.5px;
+}
+
+.main-nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+    background-color: rgba(43, 92, 179, 0.05);
+}
+
+.nav-link.active {
+    color: #ffffff;
+    background-color: var(--primary-color);
+}
+
+/* ==========================================================================
+   3. ESTRUTURA DOS CONTEÚDOS PRINCIPAIS
+   ========================================================================== */
+.main-content {
+    flex: 1;
+    max-width: 600px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.main-content-dashboard {
+    flex: 1;
+    max-width: 1300px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* ALERTAS DE FEEDBACK (Sucesso / Erro) */
+.alert {
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* ==========================================================================
+   4. ESTILIZAÇÃO DOS FORMULÁRIOS (Cadastro de Usuário e Tarefas)
+   ========================================================================== */
+.form-card {
+    background-color: var(--bg-card);
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+}
+
+.form-title {
+    font-size: 22px;
+    color: var(--text-main);
+    margin-bottom: 5px;
+}
+
+.form-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+.form-input, 
+.form-select-input, 
+.form-textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    color: var(--text-main);
+    background-color: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus, 
+.form-select-input:focus, 
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(43, 92, 179, 0.15);
+}
+
+.form-textarea {
+    resize: vertical;
+}
+
+/* BOTÕES */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 11px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    flex: 2;
+}
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: #e4e6eb;
+    color: #4b4f56;
+    flex: 1;
+}
+.btn-secondary:hover {
+    background-color: #d8dadf;
+}
+
+/* ==========================================================================
+   5. QUADRO KANBAN / DASHBOARD (index.php)
+   ========================================================================== */
+.dashboard-header {
+    margin-bottom: 30px;
+}
+.dashboard-title {
+    font-size: 26px;
+    font-weight: 700;
+}
+.dashboard-subtitle {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    align-items: start;
+}
+
+.kanban-column {
+    background-color: #ebecf0;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.03);
+    min-height: 400px;
+}
+
+.column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(0,0,0,0.05);
+}
+
+.column-title {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Cores específicas dos títulos das colunas */
+.col-todo .column-title { color: var(--todo-color); }
+.col-doing .column-title { color: var(--doing-color); }
+.col-done .column-title { color: var(--done-color); }
+
+.badge-count {
+    background-color: rgba(0,0,0,0.1);
+    color: var(--text-main);
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.column-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.empty-message {
+    color: #888888;
+    text-align: center;
+    font-size: 14px;
+    padding: 20px 0;
+    font-style: italic;
+}
+
+/* CARDS DE TAREFA */
+.task-card {
+    background-color: var(--bg-card);
+    padding: 16px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border-left: 4px solid #ccc; /* Fallback */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+/* Indicadores de Prioridade nos Cards */
+.task-card.priority-baixa { border-left-color: var(--priority-low); }
+.task-card.priority-média { border-left-color: var(--priority-medium); }
+.task-card.priority-alta { border-left-color: var(--priority-high); }
+
+/* Customização visual para tarefas concluídas */
+.task-card.task-done {
+    opacity: 0.85;
+}
+.task-card.task-done .card-description {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.card-sector {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #444;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 15px;
+    color: var(--text-main);
+    font-weight: 500;
+    margin-bottom: 14px;
+    word-wrap: break-word;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+/* CONTROLES DE AÇÃO DENTRO DOS CARDS */
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-actions.inline-actions {
+    flex-direction: row;
+}
+
+.btn-action {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-move { background-color: #e7f0ff; color: var(--primary-color); width: 100%; }
+.btn-move:hover { background-color: var(--primary-color); color: #ffffff; }
+
+.btn-back { background-color: #e4e6eb; color: #4b4f56; flex: 1; }
+.btn-back:hover { background-color: #d8dadf; }
+
+.btn-complete { background-color: #d4edda; color: var(--done-color); flex: 1; }
+.btn-complete:hover { background-color: var(--done-color); color: #ffffff; }
+
+.btn-reopen { background-color: #fff3cd; color: #856404; width: 100%; }
+.btn-reopen:hover { background-color: #ffeeba; }
+
+/* Sub-Ações (Editar e Excluir) */
+.card-sub-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.group-bottom {
+    margin-top: 8px;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 8px;
+}
+
+.btn-sub-edit, 
+.btn-sub-delete {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.btn-sub-edit { color: var(--secondary-color); }
+.btn-sub-edit:hover { color: var(--primary-color); }
+
+.btn-sub-delete { color: #cc5454; }
+.btn-sub-delete:hover { color: var(--priority-high); }
+
+
+/* ==========================================================================
+   6. RODAPÉ (Comum)
+   ========================================================================== */
+.main-footer {
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: auto;
+}
+
+/* Responsive adjust for menu */
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
