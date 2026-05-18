@@ -83,8 +83,8 @@ foreach ($todas_tarefas as $tarefa) {
                                 <span class="card-sector"><?php echo htmlspecialchars($tar['setor']); ?></span>
                                 <p class="card-description"><?php echo htmlspecialchars($tar['descricao']); ?></p>
                                 <div class="card-meta">
-                                    <span class="card-user">👤 <?php echo htmlspecialchars($tar['responsavel']); ?></span>
-                                    <span class="card-date">📅 <?php echo date('d/m/Y', strtotime($tar['data_cadastro'])); ?></span>
+                                    <span class="card-user"> <?php echo htmlspecialchars($tar['responsavel']); ?></span>
+                                    <span class="card-date"> <?php echo date('d/m/Y', strtotime($tar['data_cadastro'])); ?></span>
                                 </div>
                                 <div class="card-actions">
                                     <a href="acoes_tarefa.php?acao=status&id=<?php echo $tar['id']; ?>&novo_status=fazendo" class="btn-action btn-move" title="Iniciar Tarefa">Começar ➜</a>
@@ -113,8 +113,8 @@ foreach ($todas_tarefas as $tarefa) {
                                 <span class="card-sector"><?php echo htmlspecialchars($tar['setor']); ?></span>
                                 <p class="card-description"><?php echo htmlspecialchars($tar['descricao']); ?></p>
                                 <div class="card-meta">
-                                    <span class="card-user">👤 <?php echo htmlspecialchars($tar['responsavel']); ?></span>
-                                    <span class="card-date">📅 <?php echo date('d/m/Y', strtotime($tar['data_cadastro'])); ?></span>
+                                    <span class="card-user"> <?php echo htmlspecialchars($tar['responsavel']); ?></span>
+                                    <span class="card-date"> <?php echo date('d/m/Y', strtotime($tar['data_cadastro'])); ?></span>
                                 </div>
                                 <div class="card-actions inline-actions">
                                     <a href="acoes_tarefa.php?acao=status&id=<?php echo $tar['id']; ?>&novo_status=a fazer" class="btn-action btn-back" title="Voltar para A Fazer">⬅ Voltar</a>
@@ -144,8 +144,8 @@ foreach ($todas_tarefas as $tarefa) {
                                 <span class="card-sector"><?php echo htmlspecialchars($tar['setor']); ?></span>
                                 <p class="card-description"><?php echo htmlspecialchars($tar['descricao']); ?></p>
                                 <div class="card-meta">
-                                    <span class="card-user">👤 <?php echo htmlspecialchars($tar['responsavel']); ?></span>
-                                    <span class="card-date">📅 <?php echo date('d/m/Y', strtotime($tar['data_cadastro'])); ?></span>
+                                    <span class="card-user"> <?php echo htmlspecialchars($tar['responsavel']); ?></span>
+                                    <span class="card-date"> <?php echo date('d/m/Y', strtotime($tar['data_cadastro'])); ?></span>
                                 </div>
                                 <div class="card-actions">
                                     <a href="acoes_tarefa.php?acao=status&id=<?php echo $tar['id']; ?>&novo_status=fazendo" class="btn-action btn-reopen" title="Reabrir Tarefa">↩ Reabrir</a>
