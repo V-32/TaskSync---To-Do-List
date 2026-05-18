@@ -19,7 +19,7 @@ Antes de iniciar a configuração, certifique-se de ter instalado em sua máquin
    `C:\xampp\htdocs\`
 3. Mova o arquivo `.zip` para dentro da pasta `htdocs`.
 4. Extraia o conteúdo do arquivo compactado diretamente neste local. 
-5. Certifique-se de que a pasta extraída possua o nome exato de `tasksync` para evitar falhas nos links internos do sistema.
+5. Certifique-se de que a pasta extraída possua o nome exato de `TaskSync---To-Do-List-main` para evitar falhas nos links internos do sistema.
 
 ---
 
@@ -33,7 +33,7 @@ Antes de iniciar a configuração, certifique-se de ter instalado em sua máquin
 
 ## Passo 3: Configuração do Banco de Dados no MySQL
 
-1. Abra a pasta `database` que está localizada dentro do diretório do projeto extraído (`C:\xampp\htdocs\tasksync\database\`).
+1. Abra a pasta `database` que está localizada dentro do diretório do projeto extraído (`C:\xampp\htdocs\TaskSync---To-Do-List-main\database\`).
 2. Abra o arquivo `script.sql` utilizando o Bloco de Notas ou o seu editor de código.
 3. Selecione todo o texto do arquivo (Ctrl + A) e copie o código (Ctrl + C).
 4. Abra o seu navegador de internet e acesse a interface do phpMyAdmin pelo endereço:
@@ -47,7 +47,7 @@ Antes de iniciar a configuração, certifique-se de ter instalado em sua máquin
 ## Passo 4: Execução do Projeto no VS Code e Navegador
 
 1. Abra o **Visual Studio Code**.
-2. Vá em **File** > **Open Folder** (Arquivo > Abrir Pasta) e selecione a pasta do projeto localizada em `C:\xampp\htdocs\tasksync\`.
+2. Vá em **File** > **Open Folder** (Arquivo > Abrir Pasta) e selecione a pasta do projeto localizada em `C:\xampp\htdocs\TaskSync---To-Do-List-main\`.
 3. Com o projeto aberto no editor, você poderá visualizar e gerenciar todos os arquivos `.php` e `.css`.
 4. Para visualizar a aplicação rodando no navegador, certifique-se de que o Apache continua ligado no XAMPP e acesse a seguinte URL:
    `http://localhost/tasksync/index.php`
